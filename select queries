@@ -1,0 +1,23 @@
+USE LibraryDB;
+
+-- 1. Select all books
+SELECT * FROM Books;
+
+-- 2. Select specific columns
+SELECT title, author, category FROM Books;
+
+-- 3. Filter: Members from Bangalore
+SELECT * FROM Members WHERE address = 'Bangalore';
+
+-- 4. Use LIKE (find books with 'Data' in title)
+SELECT * FROM Books WHERE title LIKE '%Data%';
+
+-- 5. Use BETWEEN (loan dates between two days)
+SELECT * FROM Loans 
+WHERE loan_date BETWEEN '2025-09-20' AND '2025-09-22';
+
+-- 6. Sort books by available copies (descending)
+SELECT * FROM Books ORDER BY available_copies DESC;
+
+-- 7. Limit output (Top 2 books only)
+SELECT * FROM Books LIMIT 2;
